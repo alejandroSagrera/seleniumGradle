@@ -5,10 +5,7 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(
-    features = "src/test/resources/features",
-    glue = "steps"
-)
-public class runner{
+@CucumberOptions(features = "src/test/resources/features", glue = "steps", tags = "@test")
+public class runner {
 
 }

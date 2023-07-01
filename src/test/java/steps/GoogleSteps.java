@@ -13,12 +13,12 @@ public class GoogleSteps {
 
     @When("^busco algo")
     public void buscoAlgo() {
-
+        google.enterSearchCriteria("Uruguay");
     }
 
     @When("hago click en el boton buscar")
     public void hago_click_en_el_boton_buscar() {
-        // Write code here that turns the phrase above into concrete actions
+        google.clickGoogleSearch();
     }
 
     @Then("^obtengo resultado")
