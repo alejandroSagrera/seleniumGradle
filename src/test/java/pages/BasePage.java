@@ -78,4 +78,20 @@ public class BasePage {
         String cellToFill = locator + "/table/tbody/tr[" + row + "]/td[" + column + "]";
         find(cellToFill).sendKeys(data);
     }
+
+    public void switchToiFrame(int iframeId) {
+        driver.switchTo().frame(iframeId);
+    }
+
+    public void switchToParentFrame(int iframeId) {
+        driver.switchTo().parentFrame();
+    }
+
+    public void dismissAlert() {
+        driver.switchTo().alert().dismiss();
+    }
+
+    public void acceptAlert() {
+        driver.switchTo().alert().accept();
+    }
 }
