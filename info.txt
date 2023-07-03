@@ -1,0 +1,2 @@
+Comandos de ejecución:
+1. Ejecutar tags desde línea de comando: 

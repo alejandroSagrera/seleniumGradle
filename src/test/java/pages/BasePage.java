@@ -1,9 +1,9 @@
 package pages;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -33,6 +33,10 @@ public class BasePage {
         driver.get(url);
     }
 
+    public static void closeBrowser() {
+        driver.quit();
+    }
+
     private WebElement find(String locator) {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
     }
@@ -44,7 +48,7 @@ public class BasePage {
     public void write(String locator, String textToWrite) {
         find(locator).clear();
         find(locator).sendKeys(textToWrite);
-        find(locator).sendKeys(Keys.TAB);
+        // find(locator).sendKeys(Keys.TAB);
     }
 
     public void selectFromDropdownByValue(String locator, String valueToSelect) {
@@ -93,5 +97,25 @@ public class BasePage {
 
     public void acceptAlert() {
         driver.switchTo().alert().accept();
+    }
+
+    public String textFromElement(String locator) {
+        return find(locator).getText();
+    }
+
+    public boolean elementIsDisplayed(String locator) {
+        return find(locator).isDisplayed();
+    }
+
+    public boolean elementIsSelected(String locator) {
+        return find(locator).isSelected();
+    }
+
+    public boolean elementIsEnabled(String locator) {
+        return find(locator).isEnabled();
+    }
+
+    public List<WebElement> bringMeAllElements(String locator) {
+        return driver.findElements(By.className(locator));
     }
 }

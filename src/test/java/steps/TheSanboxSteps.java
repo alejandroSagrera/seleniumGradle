@@ -1,5 +1,7 @@
 package steps;
 
+import org.junit.Assert;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import pages.TestSandBox;
@@ -19,4 +21,9 @@ public class TheSanboxSteps {
         System.out.println(value);
     }
 
+    @Then("I can validate the table is displayed")
+    public void I_can_validate_the_table_is_displayed() {
+        Assert.assertTrue("No anduvo",sandBox.cellStatus());
+    }
+ 
 }

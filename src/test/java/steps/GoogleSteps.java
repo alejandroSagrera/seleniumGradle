@@ -1,5 +1,7 @@
 package steps;
 
+import org.junit.Assert;
+
 import io.cucumber.java.en.*;
 import pages.GooglePage;
 
@@ -23,6 +25,8 @@ public class GoogleSteps {
 
     @Then("^obtengo resultado")
     public void obtengoResultado() {
+        Assert.assertEquals("Uruguay", google
+                .getElementText("//h2[@class='qrShPb pXs6bb PZPZlf q8U8x aTI8gc']//span[contains(text(),'Uruguay')]"));
 
     }
 }
